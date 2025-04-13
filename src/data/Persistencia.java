@@ -9,6 +9,7 @@ public class Persistencia {
     private static ArrayList<Mamifero> animales = new ArrayList<>();
     private static ArrayList<Sector> sectores = new ArrayList<>();
     private static ArrayList<Especie> especies = new ArrayList<>();
+    private static ArrayList<Pais> paises = new ArrayList<>();
 
     private static void inicializarEspecies() {
         especies.add(new Especie("León", TipoAlimentacion.CARNIVORO, 0.2));
@@ -37,6 +38,13 @@ public class Persistencia {
         inicializarEspecies();
         inicializarSectores();
         inicializarAnimales();
+    }
+    
+    private static void inicializarPaises(){
+        paises.add(new Pais("Argentina"));
+        paises.add(new Pais("Uruguay"));
+        paises.add(new Pais("Brasil"));
+      
     }
 
     public static ArrayList<Mamifero> getAnimales() {
