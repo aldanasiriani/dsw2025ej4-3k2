@@ -4,11 +4,14 @@ import domain.*;
 
 import java.util.ArrayList;
 import java.util.InvalidPropertiesFormatException;
+import domain.Pais;
 
 public class Persistencia {
     private static ArrayList<Mamifero> animales = new ArrayList<>();
     private static ArrayList<Sector> sectores = new ArrayList<>();
     private static ArrayList<Especie> especies = new ArrayList<>();
+    private static ArrayList<Pais> paises = new ArrayList<>();
+
 
     private static void inicializarEspecies() {
         especies.add(new Especie("León", TipoAlimentacion.CARNIVORO, 0.2));
@@ -33,10 +36,17 @@ public class Persistencia {
         animales.add(new Herbivoro(8, 3800,especies.get(3), sectores.get(2), 320));
     }
 
+    private static void inicializarPaises(){ 
+    paises.add(new Pais("Peru"));
+    paises.add(new Pais("Argentina"));
+    paises.add(new Pais("Brasil"));    
+    
+    }        
     public static void inicializar() throws InvalidPropertiesFormatException{
         inicializarEspecies();
         inicializarSectores();
         inicializarAnimales();
+        inicializarPaises();
     }
 
     public static ArrayList<Mamifero> getAnimales() {
